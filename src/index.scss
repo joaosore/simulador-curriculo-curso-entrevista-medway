@@ -1,0 +1,20 @@
+@import "~bootstrap/scss/bootstrap";
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "IBM Plex Sans";
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+@media screen and (max-width: 1330px) {
+  body {
+    font-size: 14px;
+  }
+}
