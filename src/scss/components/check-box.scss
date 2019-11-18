@@ -1,0 +1,102 @@
+.check-box {
+  cursor: pointer;
+  transition: all 350ms ease-in-out;
+  &:hover {
+    background-color: #f8f8f8;
+  }
+  .placeholder {
+    border: none;
+    border-bottom: 1px solid #9f9f9f;
+    width: 100%;
+    padding: 15px 25px;
+    color: #9f9f9f;
+    display: flex;
+    flex-wrap: wrap;
+    transition: all 350ms ease-in-out;
+    padding-right: 30px;
+    &.open {
+      &:after {
+        transform: rotateZ(180deg);
+      }
+    }
+    &.error {
+      border-bottom: 1px solid red;
+    }
+    &.valid {
+      border-bottom: 1px solid #6c6c6c;
+      p {
+        color: #6c6c6c;
+      }
+    }
+    &:after {
+      transition: all 350ms ease-in-out;
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 19px;
+      right: 15px;
+      background-image: url(imgs/back.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    p {
+      margin: 0;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      color: #9f9f9f;
+      font-size: 1em;
+    }
+  }
+  .box-select {
+    background-color: #f8f8f8;
+    border: 1px solid #e2e2e2;
+
+    max-height: 0;
+    overflow: hidden;
+    border: 0;
+    transition: all 350ms ease-in-out;
+    &:after {
+      content: "";
+      background-image: url(imgs/back.svg);
+      display: block;
+      width: 16px;
+      height: 8px;
+      margin: auto;
+      padding: 20px 0;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &.open {
+      max-height: 300px;
+      border: 1px solid #e2e2e2;
+      .box-itens {
+        max-height: 225px;
+        overflow: scroll;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .box-itens {
+      max-height: 0;
+      overflow: hidden;
+      border: 0;
+      transition: all 350ms ease-in-out;
+      .item {
+        padding: 10px 25px;
+        color: #414141;
+        cursor: pointer;
+        transition: all 350ms ease-in-out;
+        &:hover {
+          background-color: #d3d3d3;
+        }
+        &.checked {
+          background-color: #d3d3d3;
+        }
+      }
+    }
+  }
+}

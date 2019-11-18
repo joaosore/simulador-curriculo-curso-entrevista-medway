@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
+@import "~selectize/dist/css/selectize.css";
 
 * {
   margin: 0;
@@ -8,13 +9,38 @@
 }
 
 body {
-  font-family: "IBM Plex Sans";
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
-  -webkit-font-smoothing: antialiased !important;
+  // -webkit-font-smoothing: antialiased !important;
+
+  max-width: 100%;
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 1330px) {
   body {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
+
+@media screen and (max-width: 991px) {
+  body {
+    display: block;
+  }
+}
+
+@import "./scss/components/button.scss";
+@import "./scss/components/p.scss";
+@import "./scss/components/h1.scss";
+@import "./scss/components/main.scss";
+@import "./scss/components/bar-status.scss";
+@import "./scss/components/input.scss";
+@import "./scss/components/check-box.scss";
+@import "./scss/components/selectize.scss";
+
+@import "./scss/home.scss";

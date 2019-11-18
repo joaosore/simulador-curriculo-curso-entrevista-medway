@@ -1,0 +1,21 @@
+main {
+  max-width: 783px;
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  &.active {
+    max-width: 1140px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  main {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}

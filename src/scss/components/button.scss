@@ -1,0 +1,101 @@
+.box-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    background-color: #0f0d6d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    padding: 16px;
+    transition: all 350ms ease-in-out;
+    max-width: 310px;
+    width: 100%;
+    border: none;
+    outline: none;
+    box-shadow: none !important;
+    &:hover {
+      background-color: #1b18cc;
+      color: #fff;
+    }
+    &::after {
+      content: "";
+      background-color: #fff;
+      -webkit-mask-image: url(./imgs/left-arrow.svg);
+      mask-image: url(./imgs/left-arrow.svg);
+      display: block;
+      width: 31px;
+      height: 21px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-left: 20px;
+      animation: LeftRight 1500ms ease-in-out infinite;
+    }
+    &.back {
+      background-color: #fff;
+      color: #a8a8a8;
+      font-weight: 500;
+      max-width: 0;
+      overflow: hidden;
+      padding: 0;
+      &.active {
+        padding: 15px;
+        max-width: 310px;
+      }
+      &:before {
+        content: "";
+        background-color: #a8a8a8;
+        -webkit-mask-image: url(./imgs/left-arrow.svg);
+        mask-image: url(./imgs/left-arrow.svg);
+        display: block;
+        width: 13px;
+        height: 9px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-right: 10px;
+        transform: rotate(180deg);
+        -webkit-mask-size: cover;
+      }
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+@keyframes LeftRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .box-btn {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    z-index: 100;
+    button {
+      max-width: 100%;
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:after {
+        width: 13px;
+        height: 9px;
+        -webkit-mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+      }
+    }
+  }
+}
