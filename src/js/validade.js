@@ -10,6 +10,15 @@ export function init_validate() {
       email: {
         required: true
       },
+      vai_prestar_prova_sp: {
+        required: true
+      },
+      vai_prestar_prova_este_ano: {
+        required: true
+      },
+      ano_de_formatura: {
+        required: true
+      },
       instituicao: {
         required: true
       },

@@ -24,6 +24,10 @@ export function init_calc() {
   var progresso = $("#progresso").val();
   var premios = $("#premios").val();
 
+  var vai_prestar_prova_sp = $('#vai_prestar_prova_sp').val();
+  var vai_prestar_prova_este_ano = $('#vai_prestar_prova_este_ano').val();
+  var ano_de_formatura = $('#ano_de_formatura').val();
+
   const dados = {
     name: name,
     email: email,
@@ -45,7 +49,10 @@ export function init_calc() {
     suporte: suporte,
     academico: academico,
     progresso: progresso,
-    premios: premios
+    premios: premios,
+    vai_prestar_prova_sp: vai_prestar_prova_sp,
+    vai_prestar_prova_este_ano: vai_prestar_prova_este_ano,
+    ano_de_formatura: ano_de_formatura
   };
 
   init_curriculo(curriculo);
@@ -117,7 +124,13 @@ function rd(dados) {
       "&custom_fields%5B692508%5D=" +
       parseFloat(sp.toFixed(2)) +
       "&custom_fields%5B692509%5D=" +
-      parseFloat(br.toFixed(2)),
+      parseFloat(br.toFixed(2)) +
+      "&custom_fields%5B1044005%5D=" +
+      dados.vai_prestar_prova_sp +
+      "&custom_fields%5B1044003%5D=" +
+      dados.vai_prestar_prova_este_ano +
+      "&custom_fields%5B329514%5D=" +
+      dados.ano_de_formatura,
     beforeSend: function() {},
     complete: function(response) {},
     success: function(response) {},
